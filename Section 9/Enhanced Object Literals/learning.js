@@ -7,11 +7,11 @@ let openingHours = {
         open: 12,
         close: 22
     },
-    [weekday[4]]: {
+    [weekday[3]]: {
         open: 11,
         close: 23
     },
-    [weekday[5]]: {
+    [weekday[4]]: {
         open: 0,
         close: 24
     },
