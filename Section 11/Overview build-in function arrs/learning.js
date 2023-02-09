@@ -3,4 +3,4 @@
 //filter
     // use to filter element in the original array which satisfy a certain condition (Thỏa mãn điều kiện nhất định) and return  an new array
 //reduce
-    //use to boils all array element down to one single value
+    //use to boils all array element down to one single value (Tổng hợp tất các giá trị trong mảng thành một giá trị duy nhất)
