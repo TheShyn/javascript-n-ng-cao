@@ -25,7 +25,9 @@ const account4 = {
     interestRate: 1,
     pin: 4444,
 };
-const histories = document.querySelector('.histories')
+let histories = document.querySelector('.histories')
+let balance = document.querySelector('.balance')
+const movements = [700,300,-345,3000]
 const accounts = [account1, account2, account3, account4];
 const displayMovement = function (movements){
     movements.forEach((element,i)=>{
@@ -48,6 +50,15 @@ const createUserNams = function(accs){
     })
 }
 createUserNams(accounts)
-console.log(accounts)
 
+const calcbalance = function (movements){
+    const myBalance = movements.reduce((acc,current)=> acc + current,0)
+    balance.textContent = myBalance + ' vnđ'
+}
+calcbalance(account2.movements)
 
+//max
+const max = movements.reduce((acc,curr)=>{
+    if(acc > curr) return acc;
+    else return curr
+},movements[0])
