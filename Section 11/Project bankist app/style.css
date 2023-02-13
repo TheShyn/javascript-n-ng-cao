@@ -9,9 +9,9 @@ body{
 }
 #header{
     padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
 }
 #header .logo{
     max-width: 70px;
@@ -53,6 +53,9 @@ body{
 }
 .app{
     margin-top: 50px;
+    /* display: none; */
+}
+.content{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 35px;
@@ -61,7 +64,8 @@ body{
     background-color: #fff;
     box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    overflow: hidden;
+    max-height: 683px;
+    overflow: scroll;
 }
 
 .history{
@@ -148,7 +152,7 @@ body{
     border-radius: 10px;
 }
 
-footer{
+.footer{
     margin-top: 50px;
     display: flex;
     justify-content:space-between;
