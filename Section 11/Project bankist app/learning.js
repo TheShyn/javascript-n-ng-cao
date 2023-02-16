@@ -27,6 +27,9 @@ const account4 = {
 };
 let histories = document.querySelector('.histories')
 let balance = document.querySelector('.balance')
+const incomes = document.querySelector('.in')
+const out = document.querySelector('.out')
+const interest = document.querySelector('.interest')
 const movements = [700,300,-345,3000]
 const accounts = [account1, account2, account3, account4];
 const displayMovement = function (movements){
@@ -62,4 +65,16 @@ const max = movements.reduce((acc,curr)=>{
     if(acc > curr) return acc;
     else return curr
 },movements[0])
+/// eur
+const eurToUsd = 1.1
+const calcDisplaySummary = function (movements){
+    const incomes1 = movements.filter(mov => mov > 0).reduce((acc,curr)=> acc + curr,0)
+    incomes.textContent = `${incomes1} $`
+    const outs = movements.filter(mov => mov < 0).reduce((acc,curr)=> acc + curr,0)
+    out.textContent = `${outs} $`
+    const inter = movements.filter(mov => mov > 0).map(item => item * 1.2/100)
+    .reduce((acc,curr)=> acc + curr,0).toFixed(2)
+    interest.textContent = `${inter} $`
 
+}
+calcDisplaySummary(account1.movements)
